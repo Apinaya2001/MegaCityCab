@@ -27,7 +27,18 @@
          0%,100% { transform: translateY(0); }
          50% { transform: translateY(-5px); }
      }*/
+   /* Fade In Animation */
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeInUp {
+        animation: fadeInUp 1s ease-out;
+    }
 
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
+    }
      .animate-fadeInUp { animation: fadeInUp 1s ease-out; }
      .animate-slideInLeft { animation: slideInLeft 1s ease-out; }
      .animate-bounce { animation: bounce 1.5s infinite; }
@@ -140,18 +151,24 @@
 
 <!-- Features Section -->
 <section class="py-20 px-6 bg-emerald-50 text-center">
-    <h2 class="text-4xl font-bold text-emerald-600 mb-8">Why Choose Mega City Cab?</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-            <h3 class="text-2xl font-semibold text-emerald-600 mb-4">Safe & Reliable</h3>
+    <h2 class="text-4xl font-bold text-emerald-600 mb-12">Why Choose Mega City Cab?</h2>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+        <!-- Feature 1 -->
+        <div class="bg-white p-8 rounded-xl shadow-lg transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan-500">
+            <h3 class="text-2xl font-semibold text-emerald-600 transition-colors duration-300 hover:text-yellow-500 mb-4">🚖 Safe & Reliable</h3>
             <p class="text-gray-700">Our drivers ensure your safety and comfort throughout the ride.</p>
         </div>
-        <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-            <h3 class="text-2xl font-semibold text-emerald-600 mb-4">24/7 Availability</h3>
+
+        <!-- Feature 2 -->
+        <div class="bg-white p-8 rounded-xl shadow-lg transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan-500">
+            <h3 class="text-2xl font-semibold text-emerald-600 transition-colors duration-300 hover:text-yellow-500 mb-4">⏰ 24/7 Availability</h3>
             <p class="text-gray-700">We’re available at all times, day and night, for your convenience.</p>
         </div>
-        <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-            <h3 class="text-2xl font-semibold text-emerald-600 mb-4">Affordable Pricing</h3>
+
+        <!-- Feature 3 -->
+        <div class="bg-white p-8 rounded-xl shadow-lg transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan-500">
+            <h3 class="text-2xl font-semibold text-emerald-600 transition-colors duration-300 hover:text-yellow-500 mb-4">💰 Affordable Pricing</h3>
             <p class="text-gray-700">Get the best value for money with our affordable and transparent pricing.</p>
         </div>
     </div>
@@ -184,7 +201,7 @@
                 <div class="absolute inset-0 w-2 bg-gradient-to-r from-emerald-600 to-sky-50 group-hover:w-full group-hover:opacity-80 transition-all duration-500"></div>
                 <div class="relative z-10">
                     <h3 class="text-2xl font-bold text-yellow-500">📧 Email</h3>
-                    <p class="text-gray-700 mt-3">support@megacitycab.com</p>
+                    <p class="text-gray-700 mt-3">megacitycab@gmail.com</p>
                 </div>
             </div>
 
@@ -242,27 +259,43 @@
 
 
 
-
 <!-- Booking Section -->
-
-<section id="booking" class="py-20 px-6 bg-emerald-600 text-white">
-    <div class="container mx-auto text-center">
+<section id="booking" class="py-24 px-6 relative bg-gradient-to-r from-emerald-700 via-emerald-600 to-emerald-500 text-white overflow-hidden">
+    <div class="container mx-auto text-center relative z-10">
         <!-- Section Heading -->
-        <h2 class="text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-300 mb-6 tracking-wide">
-            Book Your Ride with Mega City Cab
+        <h2 class="text-4xl lg:text-5xl font-extrabold text-white mb-6 tracking-wide animate-fadeInUp">
+            Book Your Ride with <span class="text-yellow-400">Mega City Cab</span>
         </h2>
-        <p class="text-lg lg:text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
-            Booking your ride is quick and seamless. Choose Mega City Cab for reliable, professional service whenever you need it. Just click below to get started!
+        <p class="text-lg lg:text-xl text-gray-200 mb-8 max-w-2xl mx-auto animate-fadeInUp delay-200">
+            Booking your ride is quick and seamless. Choose Mega City Cab for reliable, professional service whenever you need it.
         </p>
 
-        <!-- Book Now Button with Clean Hover Effect -->
+        <!-- Book Now Button with Hover Glow Effect -->
         <a href="booking.html" 
-           class="inline-block px-10 py-4 bg-yellow-500 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-400 transition duration-300 ease-in-out transform hover:scale-105">
+           class="inline-block px-10 py-4 text-lg font-semibold rounded-lg shadow-lg bg-gradient-to-r from-yellow-500 to-yellow-600 
+                  hover:from-yellow-400 hover:to-yellow-500 transition-transform duration-300 ease-in-out transform hover:scale-105
+                  ">
             🚖 Book Your Ride Now
         </a>
     </div>
+
+    <!-- Floating Animated Elements for a Dynamic Look -->
+    <div class="absolute inset-0 flex items-center justify-center">
+        <div class="w-96 h-96 bg-cyan-500 opacity-10 rounded-full blur-3xl absolute -top-10 left-20 animate-pulse"></div>
+        <div class="w-64 h-64 bg-white opacity-5 rounded-full blur-2xl absolute bottom-10 right-20 animate-ping"></div>
+    </div>
 </section>
 
+<!-- Tailwind Keyframe Animations -->
+<style>
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeInUp {
+    animation: fadeInUp 1s ease-out;
+}
+</style>
 
 <!-- Testimonials Section -->
 <section class="py-20 px-6 bg-gradient-to-b from-white to-emerald-100 text-center">
@@ -344,35 +377,13 @@
 </section>
 
 
-<!-- Keyframe Animations -->
-<style>
-    /* Fade In Animation */
-    @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    .animate-fadeInUp {
-        animation: fadeInUp 1s ease-out;
-    }
-
-    /* Floating Car Animation */
-    @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-        100% { transform: translateY(0px); }
-    }
-    .animate-float {
-        animation: float 3s ease-in-out infinite;
-    }
-</style>
-
 <!-- Footer -->
-<footer class="bg-gradient-to-b from-emerald-100 to-emerald-900 text-black py-10 font-bold">
+<footer class="bg-gradient-to-b from-emerald-100 to-emerald-700 text-black py-10 font-bold">
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-sm px-6">
 
         <!-- Mega City Cab Description -->
         <div>
-            <h3 class="text-4xl font-semibold mb-4">Mega <span class="text-emerald-900">City Cab</span></h3>
+            <h3 class="text-4xl font-semibold mb-4">Mega <span class="text-yellow-600 font-bold">City Cab</span></h3>
             <p class="text-black">Your trusted cab service in Colombo. Safe, fast, and reliable rides at your fingertips.</p>
         </div>
 
@@ -422,7 +433,7 @@
     <div class="border border-gray-600 mt-8 mx-6"></div>
 
     <!-- Copyright -->
-    <div class="text-center text-black text-sm mt-4">
+    <div class="text-center text-white text-sm mt-4">
         &copy; 2025 Mega City Cab. All Rights Reserved.
     </div>
 </footer>
