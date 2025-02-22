@@ -36,7 +36,7 @@
 </head>
 <body class="bg-white">
     <!-- Header -->
-    <header class="bg-white shadow-[0_4px_6px_0_rgba(16,385,129,0.5)] p-3 fixed top-0 left-0 w-full z-50">
+    <header class="bg-white  p-3 fixed top-0 left-0 w-full z-50">
         <div class="container mx-auto flex justify-between items-center h-8">
             <div class="flex items-center space-x-4">
             <img src="image/logo21.png" alt="Mega City Cab Logo" class="w-16 h-14 ml-12">
@@ -88,59 +88,292 @@
 </div>
   
 
-
-<section class="bg-gray-900 text-white py-16 px-6">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center">
+<!-- About Us Section -->
+<section id="about" class="relative bg-gradient-to-b from-white to-emerald-50 text-black py-20 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center space-y-12 md:space-y-0 md:space-x-12">
         
         <!-- Image Section -->
-        <div class="w-full md:w-1/2 mb-6 md:mb-0">
-            <img src="image/" alt="Mega City Cab" class="rounded-lg shadow-lg">
+        <div class="w-full md:w-1/2 relative group">
+            <img src="image/cabservice.jpg" alt="Mega City Cab" class="rounded-xl shadow-2xl transform group-hover:scale-105 transition-all duration-500">
+            <div class="absolute inset-0 bg-black opacity-20 rounded-xl group-hover:opacity-10 transition-opacity duration-500"></div>
         </div>
 
         <!-- Content Section -->
-        <div class="w-full md:w-1/2 md:pl-10">
-            <h2 class="text-4xl font-bold text-yellow-400 mb-4">About Mega City Cab</h2>
-            <p class="text-lg text-gray-300 mb-4">
-                Welcome to <span class="text-yellow-400 font-semibold">Mega City Cab</span>, your trusted transportation partner in Colombo! 
-                We provide safe, reliable, and comfortable rides with professional drivers and well-maintained vehicles. Whether you need 
-                a ride for daily commuting or long-distance travel, we've got you covered.
+        <div class="w-full md:w-1/2 text-center md:text-left">
+            <!-- Heading -->
+            <h2 class="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-yellow-400 mb-4">
+                ABOUT US
+            </h2>
+
+            <!-- Tagline -->
+            <p class="text-lg font-medium text-gray-600 italic mb-5">
+                "Your journey, our priority – Mega City Cab."
             </p>
-            
-            <h3 class="text-2xl font-semibold text-yellow-300 mt-6">Contact Us</h3>
-            <p class="text-lg text-gray-300">📧 Email: <a href="mailto:info@megacitycab.com" class="text-yellow-400 underline">info@megacitycab.com</a></p>
-            <p class="text-lg text-gray-300">📞 Phone: +94 77 123 4567</p>
-            <p class="text-lg text-gray-300">📍 Location: Colombo, Sri Lanka</p>
+
+            <!-- Description -->
+            <p class="text-lg text-gray-800 mb-6 leading-relaxed">
+                Welcome to <span class="text-emerald-600 font-semibold">Mega City Cab</span>, your trusted transportation partner in Colombo! 
+                We provide <span class="font-bold text-yellow-500">safe, reliable, and comfortable</span> rides with professional drivers and well-maintained vehicles. 
+                Whether you need a ride for daily commuting or long-distance travel, we've got you covered.
+            </p>
+
+         
+            <!-- Stats Section -->
+            <div class="grid grid-cols-3 gap-6 text-center md:text-left mt-8">
+                <div class="p-4 bg-white shadow-md rounded-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-3xl font-bold text-emerald-600">50K+</h3>
+                    <p class="text-gray-700 text-sm">Happy Customers</p>
+                </div>
+                <div class="p-4 bg-white shadow-md rounded-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-3xl font-bold text-emerald-600">200+</h3>
+                    <p class="text-gray-700 text-sm">Professional Drivers</p>
+                </div>
+                <div class="p-4 bg-white shadow-md rounded-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-3xl font-bold text-emerald-600">24/7</h3>
+                    <p class="text-gray-700 text-sm">Service Availability</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Features Section -->
+<section class="py-20 px-6 bg-emerald-50 text-center">
+    <h2 class="text-4xl font-bold text-emerald-600 mb-8">Why Choose Mega City Cab?</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+            <h3 class="text-2xl font-semibold text-emerald-600 mb-4">Safe & Reliable</h3>
+            <p class="text-gray-700">Our drivers ensure your safety and comfort throughout the ride.</p>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+            <h3 class="text-2xl font-semibold text-emerald-600 mb-4">24/7 Availability</h3>
+            <p class="text-gray-700">We’re available at all times, day and night, for your convenience.</p>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+            <h3 class="text-2xl font-semibold text-emerald-600 mb-4">Affordable Pricing</h3>
+            <p class="text-gray-700">Get the best value for money with our affordable and transparent pricing.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Us Section -->
+<section id="contact" class="py-20 px-6 bg-emerald-50">
+    <div class="container mx-auto text-center animate-fadeInUp">
+
+        <!-- Section Heading -->
+        <h2 class="text-6xl font-extrabold text-emerald-600 tracking-wide uppercase mb-6">
+            Get In Touch
+        </h2>
+        <p class="text-xl text-gray-800 mb-8">We’re here to help you 24/7! Reach out anytime.</p>
+
+        <!-- Contact Information -->
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+
+            <!-- Address Card -->
+            <div class="relative group p-8 rounded-2xl bg-white  shadow-md overflow-hidden transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl">
+                <div class="absolute inset-0 w-2 bg-gradient-to-r from-emerald-600 to-sky-50 group-hover:w-full group-hover:opacity-80 transition-all duration-500"></div>
+                <div class="relative z-10 ">
+                    <h3 class="text-2xl font-bold text-emerald-600">📍 Address</h3>
+                    <p class="text-gray-700 mt-3 font-bold ">123 Main Street, Colombo, Sri Lanka</p>
+                </div>
+            </div>
+
+            <!-- Email Card -->
+            <div class="relative group p-8 rounded-2xl bg-white shadow-md overflow-hidden transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl">
+                <div class="absolute inset-0 w-2 bg-gradient-to-r from-emerald-600 to-sky-50 group-hover:w-full group-hover:opacity-80 transition-all duration-500"></div>
+                <div class="relative z-10">
+                    <h3 class="text-2xl font-bold text-yellow-500">📧 Email</h3>
+                    <p class="text-gray-700 mt-3">support@megacitycab.com</p>
+                </div>
+            </div>
+
+            <!-- Working Hours Card -->
+            <div class="relative group p-8 rounded-2xl bg-white shadow-md overflow-hidden transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl">
+                <div class="absolute inset-0 w-2 bg-gradient-to-r from-emerald-600 to-sky-50 group-hover:w-full group-hover:opacity-80 transition-all duration-500"></div>
+                <div class="relative z-10">
+                    <h3 class="text-2xl font-bold text-gray-800">🕘 Working Hours</h3>
+                    <p class="text-gray-700 mt-3">24/7 Service Available</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Google Map -->
+        <div class="mt-16">
+            <h3 class="text-4xl font-bold text-emerald-600 mb-6">📍 Find Us Here</h3>
+            <div class="w-full h-96 rounded-lg shadow-md overflow-hidden">
+                <iframe class="w-full h-full" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31686.228632183815!2d79.84782623106591!3d6.921804265442585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2593c4185d5a1%3A0xa2b7f3f5d1f3329b!2sColombo!5e0!3m2!1sen!2slk!4v1635864587321!5m2!1sen!2slk">
+                </iframe>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-16 text-left max-w-4xl mx-auto">
+            <h3 class="text-4xl font-bold text-emerald-600 mb-8">❓ Frequently Asked Questions</h3>
+            <div class="space-y-6">
+                <details class="bg-gray-100 p-5 rounded-md shadow-md cursor-pointer transition-all duration-300 hover:bg-gray-200">
+                    <summary class="text-lg font-semibold text-emerald-700 flex items-center">
+                        🚖 How can I book a ride? 
+                        <span class="ml-auto">▼</span>
+                    </summary>
+                    <p class="text-gray-700 mt-3">You can book a ride using our website or by calling us directly.</p>
+                </details>
+                <details class="bg-gray-100 p-5 rounded-md shadow-md cursor-pointer transition-all duration-300 hover:bg-gray-200">
+                    <summary class="text-lg font-semibold text-emerald-700 flex items-center">
+                        💳 What payment methods do you accept? 
+                        <span class="ml-auto">▼</span>
+                    </summary>
+                    <p class="text-gray-700 mt-3">We accept cash, credit/debit cards, and online payments.</p>
+                </details>
+                <details class="bg-gray-100 p-5 rounded-md shadow-md cursor-pointer transition-all duration-300 hover:bg-gray-200">
+                    <summary class="text-lg font-semibold text-emerald-700 flex items-center">
+                        ⏳ How long does it take to get a cab? 
+                        <span class="ml-auto">▼</span>
+                    </summary>
+                    <p class="text-gray-700 mt-3">Our drivers usually arrive within 5-10 minutes of booking.</p>
+                </details>
+            </div>
         </div>
 
     </div>
 </section>
 
-    <!-- Contact Us Section -->
-    <section id="contact" class="py-16 px-6 bg-white">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-semibold text-emerald-600 mb-6">Contact Us</h2>
-            <p class="text-lg text-gray-700 mb-4">Feel free to reach out to us. We’re here to assist you with anything you need.</p>
-            <a href="tel:+94123456789" class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-2 rounded-lg text-lg">Call Us Now</a>
-        </div>
-    </section>
 
-    <!-- Booking Section -->
-    <section id="booking" class="py-16 px-6 bg-gray-50">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-semibold text-emerald-600 mb-6">Book a Ride</h2>
-            <p class="text-lg text-gray-700 mb-6">Booking a ride with Mega City Cab is quick and easy. Simply click the button below to get started.</p>
-            <a href="booking.html" class="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-2 rounded-lg text-lg">Book Now</a>
+
+
+<!-- Booking Section -->
+
+<section id="booking" class="py-20 px-6 bg-emerald-600 text-white">
+    <div class="container mx-auto text-center">
+        <!-- Section Heading -->
+        <h2 class="text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-300 mb-6 tracking-wide">
+            Book Your Ride with Mega City Cab
+        </h2>
+        <p class="text-lg lg:text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+            Booking your ride is quick and seamless. Choose Mega City Cab for reliable, professional service whenever you need it. Just click below to get started!
+        </p>
+
+        <!-- Book Now Button with Clean Hover Effect -->
+        <a href="booking.html" 
+           class="inline-block px-10 py-4 bg-yellow-500 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-400 transition duration-300 ease-in-out transform hover:scale-105">
+            🚖 Book Your Ride Now
+        </a>
+    </div>
+</section>
+
+
+<!-- Testimonials Section -->
+<section class="py-20 px-6 bg-gradient-to-b from-white to-emerald-100 text-center">
+    <h2 class="text-4xl font-bold text-transparent bg-clip-text bg-emerald-600 mb-12">
+        What Our Customers Say
+    </h2>
+    <div class="flex flex-col md:flex-row md:space-x-12 space-y-8 md:space-y-0 justify-center">
+        <!-- Testimonial 1 -->
+        <div class="bg-white p-4 rounded-xl shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl max-w-md mx-auto relative">
+            <div class="flex items-center space-x-4 mb-4">
+                <img class="w-16 h-16 rounded-full object-cover" src="image/g3.png" alt="Sarah M." />
+                <p class="text-xl font-semibold text-emerald-600">- Sarah M.</p>
+            </div>
+            <p class="text-lg text-gray-700 italic mb-4">"Mega City Cab is amazing! The ride was comfortable, and the driver was very professional. Highly recommend!"</p>
+            <div class="flex justify-center space-x-2 mb-4">
+                <!-- Star SVG Rating -->
+                <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 15l-3.09 1.63L7.6 12.68 5 9.88l3.91-.34L10 3l1.09 6.54 3.91.34-2.6 2.8 1.69 4.95L10 15z"></path>
+                </svg>
+                <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 15l-3.09 1.63L7.6 12.68 5 9.88l3.91-.34L10 3l1.09 6.54 3.91.34-2.6 2.8 1.69 4.95L10 15z"></path>
+                </svg>
+                <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 15l-3.09 1.63L7.6 12.68 5 9.88l3.91-.34L10 3l1.09 6.54 3.91.34-2.6 2.8 1.69 4.95L10 15z"></path>
+                </svg>
+                <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 15l-3.09 1.63L7.6 12.68 5 9.88l3.91-.34L10 3l1.09 6.54 3.91.34-2.6 2.8 1.69 4.95L10 15z"></path>
+                </svg>
+            </div>
         </div>
-    </section>
+        <!-- Testimonial 2 -->
+        <div class="bg-white p-8 rounded-xl shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl max-w-md mx-auto relative">
+            <div class="flex items-center space-x-4 mb-4">
+                <img class="w-16 h-16 rounded-full object-cover" src="image/g4.jpg" alt="John D." />
+                <p class="text-xl font-semibold text-emerald-600">- John D.</p>
+            </div>
+            <p class="text-lg text-gray-700 italic mb-4">"Always on time! The booking process is easy, and the drivers are friendly. I trust Mega City Cab for all my rides."</p>
+            <div class="flex justify-center space-x-2 mb-4">
+                <!-- Star SVG Rating -->
+                <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 15l-3.09 1.63L7.6 12.68 5 9.88l3.91-.34L10 3l1.09 6.54 3.91.34-2.6 2.8 1.69 4.95L10 15z"></path>
+                </svg>
+                <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 15l-3.09 1.63L7.6 12.68 5 9.88l3.91-.34L10 3l1.09 6.54 3.91.34-2.6 2.8 1.69 4.95L10 15z"></path>
+                </svg>
+                <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 15l-3.09 1.63L7.6 12.68 5 9.88l3.91-.34L10 3l1.09 6.54 3.91.34-2.6 2.8 1.69 4.95L10 15z"></path>
+                </svg>
+                <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 15l-3.09 1.63L7.6 12.68 5 9.88l3.91-.34L10 3l1.09 6.54 3.91.34-2.6 2.8 1.69 4.95L10 15z"></path>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-white p-8 rounded-xl shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl max-w-md mx-auto relative">
+            <div class="flex items-center space-x-4 mb-4">
+                <img class="w-16 h-16 rounded-full object-cover" src="image/g1.png" alt="Jessica A." />
+                <p class="text-xl font-semibold text-emerald-600">- Jessica A.</p>
+            </div>
+            <p class="text-lg text-gray-700 italic mb-4">"Excellent service! The drivers are always courteous, and the cars are always clean and well-maintained."</p>
+            <div class="flex justify-center space-x-2 mb-4">
+                <!-- Star SVG Rating -->
+                <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 15l-3.09 1.63L7.6 12.68 5 9.88l3.91-.34L10 3l1.09 6.54 3.91.34-2.6 2.8 1.69 4.95L10 15z"></path>
+                </svg>
+                <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 15l-3.09 1.63L7.6 12.68 5 9.88l3.91-.34L10 3l1.09 6.54 3.91.34-2.6 2.8 1.69 4.95L10 15z"></path>
+                </svg>
+                <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 15l-3.09 1.63L7.6 12.68 5 9.88l3.91-.34L10 3l1.09 6.54 3.91.34-2.6 2.8 1.69 4.95L10 15z"></path>
+                </svg>
+                <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 15l-3.09 1.63L7.6 12.68 5 9.88l3.91-.34L10 3l1.09 6.54 3.91.34-2.6 2.8 1.69 4.95L10 15z"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Keyframe Animations -->
+<style>
+    /* Fade In Animation */
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeInUp {
+        animation: fadeInUp 1s ease-out;
+    }
+
+    /* Floating Car Animation */
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+    }
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
+    }
+</style>
 
 <!-- Footer -->
-<footer class="bg-gradient-to-b from-emerald-900 to-emerald-300 text-white py-10 font-bold">
+<footer class="bg-gradient-to-b from-emerald-100 to-emerald-900 text-black py-10 font-bold">
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-sm px-6">
 
         <!-- Mega City Cab Description -->
         <div>
-            <h3 class="text-4xl font-semibold mb-4">Mega <span class="text-yellow-400">City Cab</span></h3>
-            <p class="text-white">Your trusted cab service in Colombo. Safe, fast, and reliable rides at your fingertips.</p>
+            <h3 class="text-4xl font-semibold mb-4">Mega <span class="text-emerald-900">City Cab</span></h3>
+            <p class="text-black">Your trusted cab service in Colombo. Safe, fast, and reliable rides at your fingertips.</p>
         </div>
 
         <!-- Quick Links -->
