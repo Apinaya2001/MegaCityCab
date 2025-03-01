@@ -1,6 +1,6 @@
 <%-- 
-    Document   : about
-    Created on : Feb 8, 2025, 4:05:13 AM
+    Document   : userDetails
+    Created on : Feb 25, 2025, 10:02:36 PM
     Author     : Piri
 --%>
 
@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>user details!</h1>
     </body>
 </html>
