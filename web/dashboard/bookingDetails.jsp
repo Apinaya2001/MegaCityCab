@@ -1,6 +1,6 @@
 <%-- 
-    Document   : layout
-    Created on : Feb 8, 2025, 4:06:04 AM
+    Document   : bookingDetails
+    Created on : Feb 25, 2025, 10:02:17 PM
     Author     : Piri
 --%>
 
@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>booking details!</h1>
     </body>
 </html>

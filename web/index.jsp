@@ -58,7 +58,7 @@
                 <a href="#about" class="hover:text-emerald-500 transition duration-300">About</a>
                 <a href="#contact" class="hover:text-emerald-500 transition duration-300">Contact Us</a>
                 <a href="#booking" class="hover:text-emerald-500 transition duration-300">Booking</a>
-                <a href="login.jsp" class="bg-emerald-500 text-white font-bold px-4 py-2 rounded-xl shadow hover:bg-white hover:text-emerald-500 hover:shadow-lg transition duration-300">Login</a>
+                <a href="login.jsp" class="bg-emerald-500 text-white font-bold px-4 py-2 rounded-lg shadow hover:bg-white hover:text-emerald-500 hover:shadow-lg transition duration-300">Login</a>
 
             </nav>
         </div>
@@ -220,7 +220,7 @@
         <div class="mt-16">
             <h3 class="text-4xl font-bold text-emerald-600 mb-6">📍 Find Us Here</h3>
             <div class="w-full h-96 rounded-lg shadow-md overflow-hidden">
-                <iframe class="w-full h-full" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                <iframe class="w-full h-full" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" alt="google map"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31686.228632183815!2d79.84782623106591!3d6.921804265442585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2593c4185d5a1%3A0xa2b7f3f5d1f3329b!2sColombo!5e0!3m2!1sen!2slk!4v1635864587321!5m2!1sen!2slk">
                 </iframe>
             </div>

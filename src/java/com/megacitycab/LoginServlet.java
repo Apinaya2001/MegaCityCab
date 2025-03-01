@@ -17,7 +17,7 @@ public class LoginServlet extends HttpServlet {
 
         // Dummy authentication (Replace this with database authentication)
         if ("admin".equals(username) && "1234".equals(password)) {
-            response.sendRedirect("dashboard.jsp");  // Redirect to dashboard on success
+            response.sendRedirect("dashboard/dashboard.jsp");  // Redirect to dashboard on success
         } else {
             response.sendRedirect("index.jsp?error=Invalid credentials"); // Redirect back with error
         }
