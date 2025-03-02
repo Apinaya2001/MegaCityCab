@@ -13,23 +13,20 @@
     <aside class="bg-emerald-600 text-white w-[222px] min-h-screen p-6 fixed shadow-lg">
         <h1 class="text-3xl font-extrabold mb-8 text-center tracking-wide">Mega City Cab</h1>
         <nav class="space-y-4">
-            <a href="dashboardview.jsp" class="flex items-center text-lg p-2 rounded-lg hover:bg-white hover:text-emerald-500 transition">
+            <a href="dashboard.jsp" class="flex items-center text-lg p-2 rounded-lg hover:bg-white hover:text-emerald-500 transition">
                 <i class="fa-solid fa-tachometer-alt mr-3"></i> Dashboard
             </a>
             <a href="userDetails.jsp" class="flex items-center text-lg p-2 rounded-lg hover:bg-white hover:text-emerald-500 transition">
                 <i class="fa-solid fa-users mr-3"></i> Users
             </a>
-            <a href="driver.jsp" class="flex items-center text-lg p-2 rounded-lg hover:bg-white hover:text-emerald-500 transition">
+            <a href="driverManagement.jsp" class="flex items-center text-lg p-2 rounded-lg hover:bg-white hover:text-emerald-500 transition">
                 <i class="fa-solid fa-user-tie mr-3"></i> Drivers
             </a>
             <a href="cabManagement.jsp" class="flex items-center text-lg p-2 rounded-lg hover:bg-white hover:text-emerald-500 transition">
                 <i class="fa-solid fa-car-side mr-3"></i> Cabs
             </a>
-            <a href="booking.jsp" class="flex items-center text-lg p-2 rounded-lg hover:bg-white hover:text-emerald-500 transition">
+            <a href="bookingDetails.jsp" class="flex items-center text-lg p-2 rounded-lg hover:bg-white hover:text-emerald-500 transition">
                 <i class="fa-solid fa-list-alt mr-3"></i> Bookings
-            </a>
-            <a href="logout.jsp" class="flex items-center text-lg p-2 rounded-lg hover:bg-white hover:text-emerald-500 transition">
-                <i class="fa-solid fa-sign-out-alt mr-3"></i> Logout
             </a>
         </nav>
     </aside>
@@ -39,7 +36,7 @@
 
         <!-- Header -->
         <header class="bg-emerald-600 text-white p-4 flex items-center justify-between">
-            <h1 class="text-2xl font-bold">Admin Dashboard</h1>
+            <h1 class="text-2xl font-bold"></h1>
             <a href="logout.jsp" class="bg-emerald-600 text-white font-bold px-4 py-2 rounded-lg hover:bg-white hover:text-emerald-500 hover:shadow-lg transition duration-300">
                 Logout
             </a>

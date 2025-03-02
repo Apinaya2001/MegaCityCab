@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package com.megacitycab;
+
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,8 +16,8 @@ import jakarta.servlet.http.HttpServletResponse;
  *
  * @author Piri
  */
-@WebServlet(name = "bookingDetails", urlPatterns = {"/bookingDetails"})
-public class bookingDetails extends HttpServlet {
+@WebServlet(name = "userDetails", urlPatterns = {"/userDetails"})
+public class userDetails extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,10 +36,10 @@ public class bookingDetails extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet bookingDetails</title>");
+            out.println("<title>Servlet userDetails</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet bookingDetails at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet userDetails at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }

@@ -16,4 +16,10 @@
         <servlet-name>driverManagement</servlet-name>
         <url-pattern>/driverManagement</url-pattern>
     </servlet-mapping>
+    <dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.27</version>
+</dependency>
+
 </web-app>
