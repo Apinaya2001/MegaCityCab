@@ -258,25 +258,77 @@
 </section>
 
 
-
 <!-- Booking Section -->
 <section id="booking" class="py-24 px-6 relative bg-gradient-to-r from-emerald-700 via-emerald-600 to-emerald-500 text-white overflow-hidden">
     <div class="container mx-auto text-center relative z-10">
         <!-- Section Heading -->
+        <div class="flex flex-row">
+            <div class="flex flex-col">
         <h2 class="text-4xl lg:text-5xl font-extrabold text-white mb-6 tracking-wide animate-fadeInUp">
-            Book Your Ride with <span class="text-yellow-400">Mega City Cab</span>
+            Book Your Ride with <br> <span class="text-yellow-400 space-y-10">Mega City Cab</span>
         </h2>
-        <p class="text-lg lg:text-xl text-gray-200 mb-8 max-w-2xl mx-auto animate-fadeInUp delay-200">
-            Booking your ride is quick and seamless. Choose Mega City Cab for reliable, professional service whenever you need it.
-        </p>
+       <p class="text-lg lg:text-xl text-gray-200 mb-8 max-w-2xl mx-auto animate-fadeInUp delay-200">
+    Booking your ride is <span class="text-yellow-300 font-semibold">quick, easy, and seamless.</span>  
+    Experience <span class="text-yellow-300 font-semibold">comfort and reliability</span> with Mega City Cab,  
+    ensuring you reach your destination <span class="text-yellow-300 font-semibold">safely and on time.</span>  
+    Whether it’s a daily commute, an airport transfer, or a special event,  
+    our <span class="text-yellow-300 font-semibold">professional drivers</span> and well-maintained vehicles are here for you.
+</p>
 
-        <!-- Book Now Button with Hover Glow Effect -->
-        <a href="booking.html" 
-           class="inline-block px-10 py-4 text-lg font-semibold rounded-lg shadow-lg bg-gradient-to-r from-yellow-500 to-yellow-600 
-                  hover:from-yellow-400 hover:to-yellow-500 transition-transform duration-300 ease-in-out transform hover:scale-105
-                  ">
-            🚖 Book Your Ride Now
-        </a>
+            </div>
+
+        <!-- Booking Form -->
+      <form action="booking.html" method="POST" class="bg-white p-6 rounded-xl shadow-2xl max-w-lg mx-auto text-gray-800 animate-fadeInUp delay-300 border border-gray-200">
+    <div class="flex flex-row space-x-4">
+        <div class="w-1/2">
+            <label for="name" class="block text-lg font-semibold text-gray-700 mb-1">Full Name</label>
+            <input type="text" id="name" name="name" required
+                class="w-full px-2 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 text-lg shadow-sm">
+        </div>
+
+        <div class="w-1/2">
+            <label for="phone" class="block text-lg font-semibold text-gray-700 mb-1">Phone Number</label>
+            <input type="text" id="phone" name="phone" required
+                class="w-full px-2 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 text-lg shadow-sm">
+        </div>
+        
+    </div>
+
+    <div class="flex flex-row space-x-4 mt-4">
+        <div class="w-1/2">
+            <label for="start-location" class="block text-lg font-semibold text-gray-700 mb-1">Start Location</label>
+            <input type="text" id="start-location" name="start-location" required
+                class="w-full px-2 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 text-lg shadow-sm">
+        </div>
+        <div class="w-1/2">
+            <label for="end-location" class="block text-lg font-semibold text-gray-700 mb-1">End Location</label>
+            <input type="text" id="end-location" name="end-location" required
+                class="w-full px-2 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 text-lg shadow-sm">
+        </div>
+
+    </div>
+
+    <div class="mt-4">
+        <label for="cab-type" class="block text-lg font-semibold text-gray-700 mb-1">Select Cab</label>
+        <select id="cab-type" name="cab-type" required
+            class="w-full px-2 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 text-lg shadow-sm">
+            <option value="" disabled selected>Select your cab</option>
+            <option value="standard">Standard</option>
+            <option value="luxury">Luxury</option>
+            <option value="SUV">SUV</option>
+            <option value="minivan">Minivan</option>
+        </select>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit"
+        class="w-full mt-6 px-6 py-3 text-lg font-semibold text-white rounded-lg shadow-lg bg-gradient-to-r from-yellow-500 to-yellow-600 
+        hover:from-yellow-400 hover:to-yellow-500 transition-transform duration-300 ease-in-out transform hover:scale-105">
+        🚖 Book Now
+    </button>
+</form>
+
+        </div>
     </div>
 
     <!-- Floating Animated Elements for a Dynamic Look -->
@@ -285,6 +337,7 @@
         <div class="w-64 h-64 bg-white opacity-5 rounded-full blur-2xl absolute bottom-10 right-20 animate-ping"></div>
     </div>
 </section>
+
 
 <!-- Tailwind Keyframe Animations -->
 <style>
