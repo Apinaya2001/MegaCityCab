@@ -3,13 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Piri/Documents/NetBeansProjects/MegaCityCab/MegaCityCab/src/java/bookingDetails.java</file>
-            <file>file:/C:/Users/Piri/Documents/NetBeansProjects/MegaCityCab/MegaCityCab/src/java/LoginServlet.java</file>
-            <file>file:/C:/Users/Piri/Documents/NetBeansProjects/MegaCityCab/MegaCityCab/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/Piri/Documents/NetBeansProjects/MegaCityCab/MegaCityCab/web/dashboard/dashboard.jsp</file>
-            <file>file:/C:/Users/Piri/Documents/NetBeansProjects/MegaCityCab/MegaCityCab/web/register.jsp</file>
-            <file>file:/C:/Users/Piri/Documents/NetBeansProjects/MegaCityCab/MegaCityCab/nbproject/build-impl.xml</file>
-            <file>file:/C:/Users/Piri/Documents/NetBeansProjects/MegaCityCab/MegaCityCab/src/java/SignupServlet.java</file>
+            <file>file:/C:/Users/Piri/Documents/WebApplication1/MegaCityCab/src/java/LoginServlet.java</file>
+            <file>file:/C:/Users/Piri/Documents/WebApplication1/MegaCityCab/src/java/MySQLConnection.java</file>
         </group>
     </open-files>
 </project-private>
