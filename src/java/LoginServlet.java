@@ -1,5 +1,9 @@
 
+<<<<<<< Updated upstream
 
+=======
+import java.io.IOException;
+>>>>>>> Stashed changes
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
