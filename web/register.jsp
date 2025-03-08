@@ -37,8 +37,8 @@
         <!-- Centered Sign up Form -->
         <div class="flex justify-center items-center flex-grow">
             <div class="bg-white shadow-lg rounded-2xl p-6 w-96">
-                <h2 class="text-xl font-bold text-center text-black">Signup</h2>
-                <p class="text-gray-500 text-center mb-4 text-sm">Create an account to get started</p>
+                <h2 class="text-2xl font-bold text-center text-black">Signup</h2>
+                <p class="text-gray-500 text-center mb-4 text-sm">Create an account</p>
 
                 <form action="SignupServlet" method="post">
                     <!-- Full Name -->
@@ -76,13 +76,13 @@
                     </div>
 
                     <!-- Signup Button -->
-                    <button type="submit" class="w-full bg-yellow-500 text-black font-bold py-2 rounded-lg hover:bg-yellow-600 transition text-sm">
+                    <button type="submit" class="w-full bg-emerald-500 text-black font-bold py-2 rounded-lg hover:bg-emerald-600 hover:text-white transition text-sm">
                         SIGNUP
                     </button>
 
                     <!-- Login Link -->
                     <p class="text-center text-gray-600 mt-3 text-[15px]">Already have an account?
-                        <a href="login.jsp" class="text-yellow-600 font-semibold hover:underline">Login</a>
+                        <a href="login.jsp" class="text-emerald-600 font-semibold hover:underline">Login</a>
                     </p>
                 </form>
             </div>
