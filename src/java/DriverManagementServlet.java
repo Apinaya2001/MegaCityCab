@@ -95,10 +95,10 @@ public class DriverManagementServlet extends HttpServlet {
             
             stmt.setInt(1, driverId);
             int rowsAffected = stmt.executeUpdate();
-            response.sendRedirect(rowsAffected > 0 ? "driverManagement.jsp?success=deleted" : "driverManagement.jsp?error=db_error");
+            response.sendRedirect(rowsAffected > 0 ? "dashboard/driverManagement.jsp?success=deleted" : "driverManagement.jsp?error=db_error");
         } catch (SQLException e) {
             e.printStackTrace();
-            response.sendRedirect("driverManagement.jsp?error=db_exception");
+            response.sendRedirect("dashboard/driverManagement.jsp?error=db_exception");
         }
     }
 
