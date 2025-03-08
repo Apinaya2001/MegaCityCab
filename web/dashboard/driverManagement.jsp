@@ -74,7 +74,7 @@
                     <div class="bg-white p-6 rounded-lg shadow-xl w-1/3">
                         <h2 class="text-2xl font-semibold text-center text-gray-800 mb-4">Edit Driver</h2>
                         <form action="../DriverManagementServlet" method="post">
-                            <input type="hidden" name="action" value="update">
+                        <input type="hidden" name="action" value="edit">
                             <input type="hidden" id="editDriverId" name="driverId">
                             
                             <div class="mb-4">
@@ -149,30 +149,30 @@
     </div>
 
     <!-- JavaScript -->
-    <script>
-        document.getElementById("openModalBtn").addEventListener("click", function() {
-            document.getElementById("modal").classList.remove("hidden");
-        });
+   <script>
+    document.querySelectorAll(".editBtn").forEach(button => {
+        button.addEventListener("click", function () {
+            document.getElementById("editDriverId").value = this.getAttribute("data-id");
+            document.getElementById("editDriverName").value = this.getAttribute("data-name");
+            document.getElementById("editLicenseNumber").value = this.getAttribute("data-license");
+            document.getElementById("editCabAssigned").value = this.getAttribute("data-cab");
+            document.getElementById("editStatus").value = this.getAttribute("data-status");
 
-        document.getElementById("closeModalBtn").addEventListener("click", function() {
-            document.getElementById("modal").classList.add("hidden");
+            document.getElementById("editModal").classList.remove("hidden");
         });
+    });
 
-        document.querySelectorAll(".editBtn").forEach(button => {
-            button.addEventListener("click", function() {
-                document.getElementById("editDriverId").value = this.dataset.id;
-                document.getElementById("editDriverName").value = this.dataset.name;
-                document.getElementById("editLicenseNumber").value = this.dataset.license;
-                document.getElementById("editCabAssigned").value = this.dataset.cab;
-                document.getElementById("editStatus").value = this.dataset.status;
-                document.getElementById("editModal").classList.remove("hidden");
-            });
-        });
+    document.getElementById("closeEditModalBtn").addEventListener("click", function () {
+        document.getElementById("editModal").classList.add("hidden");
+    });
 
-        document.getElementById("closeEditModalBtn").addEventListener("click", function() {
-            document.getElementById("editModal").classList.add("hidden");
-        });
-    </script>
+    document.getElementById("openModalBtn").addEventListener("click", function () {
+        document.getElementById("modal").classList.remove("hidden");
+    });
 
+    document.getElementById("closeModalBtn").addEventListener("click", function () {
+        document.getElementById("modal").classList.add("hidden");
+    });
+</script>
 </body>
 </html>

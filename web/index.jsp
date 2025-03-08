@@ -278,7 +278,7 @@
             </div>
 
         <!-- Booking Form -->
-      <form action="booking.html" method="POST" class="bg-white p-6 rounded-xl shadow-2xl max-w-lg mx-auto text-gray-800 animate-fadeInUp delay-300 border border-gray-200">
+<!--      <form action="booking.html" method="POST" class="bg-white p-6 rounded-xl shadow-2xl max-w-lg mx-auto text-gray-800 animate-fadeInUp delay-300 border border-gray-200">
     <div class="flex flex-row space-x-4">
         <div class="w-1/2">
             <label for="name" class="block text-lg font-semibold text-gray-700 mb-1">Full Name</label>
@@ -309,24 +309,57 @@
     </div>
 
     <div class="mt-4">
-        <label for="cab-type" class="block text-lg font-semibold text-gray-700 mb-1">Select Cab</label>
-        <select id="cab-type" name="cab-type" required
-            class="w-full px-2 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 text-lg shadow-sm">
-            <option value="" disabled selected>Select your cab</option>
-            <option value="standard">Standard</option>
-            <option value="luxury">Luxury</option>
-            <option value="SUV">SUV</option>
-            <option value="minivan">Minivan</option>
-        </select>
+        <label for="Selectcab" class="block text-lg font-semibold text-gray-700 mb-1">Select your cab</label>
+            <input type="text" id="Selectcab" name="Selectcab" required
+                class="w-full px-2 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 text-lg shadow-sm">           
     </div>
 
-    <!-- Submit Button -->
+     Submit Button 
     <button type="submit"
         class="w-full mt-6 px-6 py-3 text-lg font-semibold text-white rounded-lg shadow-lg bg-gradient-to-r from-yellow-500 to-yellow-600 
         hover:from-yellow-400 hover:to-yellow-500 transition-transform duration-300 ease-in-out transform hover:scale-105">
         🚖 Book Now
     </button>
+</form>-->
+
+<form action="BookingServlet" method="POST" class="bg-white p-6 rounded-xl shadow-2xl max-w-lg mx-auto text-gray-800 border border-gray-200">
+    <div class="flex flex-row space-x-4">
+        <div class="w-1/2">
+            <label for="name" class="block text-lg font-semibold text-gray-700 mb-1">Full Name</label>
+            <input type="text" id="name" name="name" required class="w-full px-2 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500">
+        </div>
+
+        <div class="w-1/2">
+            <label for="phone" class="block text-lg font-semibold text-gray-700 mb-1">Phone Number</label>
+            <input type="text" id="phone" name="phone" required class="w-full px-2 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500">
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <label for="start-location" class="block text-lg font-semibold text-gray-700 mb-1">Start Location</label>
+        <input type="text" id="start-location" name="start_location" required class="w-full px-2 py-2 border border-gray-300 rounded-lg">
+    </div>
+
+    <div class="mt-4">
+        <label for="end-location" class="block text-lg font-semibold text-gray-700 mb-1">End Location</label>
+        <input type="text" id="end-location" name="end_location" required class="w-full px-2 py-2 border border-gray-300 rounded-lg">
+    </div>
+
+    <div class="mt-4">
+        <label for="Selectcab" class="block text-lg font-semibold text-gray-700 mb-1">Select your Cab</label>
+        <select id="Selectcab" name="selected_cab" required class="w-full px-2 py-2 border border-gray-300 rounded-lg">
+            <option value="Bike">Bike</option>
+            <option value="CAR" selected>CAR</option>
+            <option value="Van">Van</option>
+            <option value="Auto">Auto</option>
+        </select>
+    </div>
+
+    <button type="submit" class="w-full mt-6 px-6 py-3 text-lg text-white bg-gradient-to-r from-yellow-500 to-yellow-600 hover:scale-105">
+        🚖 Book Now
+    </button>
 </form>
+
 
         </div>
     </div>
