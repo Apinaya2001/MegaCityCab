@@ -14,25 +14,32 @@ public class DriverManagementServlet extends HttpServlet {
     private static final String JDBC_USER = "root";
     private static final String JDBC_PASSWORD = "";
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        String action = request.getParameter("action");
+   @Override
+protected void doPost(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+    String action = request.getParameter("action");
 
-        switch (action) {
-            case "save":
-                saveDriver(request, response);
-                break;
-            case "edit":
-                editDriver(request, response);
-                break;
-            case "delete":
-                deleteDriver(request, response);
-                break;
-            default:
-                response.sendRedirect("driverManagement.jsp?error=invalid_action");
-        }
+    // Ensure the action is not null or empty
+    if (action == null || action.trim().isEmpty()) {
+        response.sendRedirect("driverManagement.jsp?error=invalid_action");
+        return;
     }
+
+    switch (action) {
+        case "save":
+            saveDriver(request, response);
+            break;
+        case "edit":
+            editDriver(request, response);
+            break;
+        case "delete":
+            deleteDriver(request, response);  // Call the delete method here
+            break;
+        default:
+            response.sendRedirect("driverManagement.jsp?error=invalid_action");
+    }
+}
+
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -87,20 +94,30 @@ public class DriverManagementServlet extends HttpServlet {
         response.sendRedirect("dashboard/driverManagement.jsp?error=db_exception");
     }
 }
-    private void deleteDriver(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        int driverId = Integer.parseInt(request.getParameter("driverId"));
+   private void deleteDriver(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    // Retrieve the driverId from the request parameter
+    int driverId = Integer.parseInt(request.getParameter("driverId"));
 
-        try (Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
-             PreparedStatement stmt = conn.prepareStatement("DELETE FROM drivers WHERE id = ?")) {
-            
-            stmt.setInt(1, driverId);
-            int rowsAffected = stmt.executeUpdate();
-            response.sendRedirect(rowsAffected > 0 ? "dashboard/driverManagement.jsp?success=deleted" : "driverManagement.jsp?error=db_error");
-        } catch (SQLException e) {
-            e.printStackTrace();
-            response.sendRedirect("dashboard/driverManagement.jsp?error=db_exception");
+    try (Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+         PreparedStatement stmt = conn.prepareStatement("DELETE FROM drivers WHERE driver_id = ?")) {
+        
+        stmt.setInt(1, driverId);  // Set the driver ID for deletion
+
+        int rowsAffected = stmt.executeUpdate();  // Execute the delete operation
+
+        // Redirect based on whether the deletion was successful
+        if (rowsAffected > 0) {
+            response.sendRedirect("dashboard/driverManagement.jsp?success=deleted");
+        } else {
+            response.sendRedirect("dashboard/driverManagement.jsp?error=db_error");
         }
+    } catch (SQLException e) {
+        e.printStackTrace();
+        response.sendRedirect("dashboard/driverManagement.jsp?error=db_exception");
     }
+}
+
+
 
     private void getDrivers(HttpServletRequest request, HttpServletResponse response) throws IOException {
         List<String> drivers = new ArrayList<>();

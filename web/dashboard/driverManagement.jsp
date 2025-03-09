@@ -118,6 +118,7 @@
                         <table class="min-w-full table-auto">
                             <thead class="bg-emerald-600 text-white">
                                 <tr>
+                                    <th class="py-3 px-6 text-left text-sm">Driver ID</th>
                                     <th class="py-3 px-6 text-left text-sm">Driver Name</th>
                                     <th class="py-3 px-6 text-left text-sm">License Number</th>
                                     <th class="py-3 px-6 text-left text-sm">Cab Assigned</th>
@@ -136,6 +137,8 @@
                                         while (rs.next()) {
                                 %>
                                 <tr class="border-b hover:bg-gray-50">
+                                    <td class="py-3 px-6 text-sm"><%= rs.getInt("driver_id")%></td>
+
                                     <td class="py-3 px-6 text-sm"><%= rs.getString("name")%></td>
                                     <td class="py-3 px-6 text-sm"><%= rs.getString("license_number")%></td>
                                     <td class="py-3 px-6 text-sm"><%= rs.getString("cab_assigned")%></td>
@@ -149,14 +152,19 @@
                                                 data-status="<%= rs.getString("status")%>">
                                             Edit
                                         </button> |
-                                        <a href="deleteDriver.jsp?id=<%= rs.getInt("driver_id")%>" class="hover:bg-red-500 hover:text-white font-bold px-4 py-2 rounded-lg  bg-white text-red-500 hover:shadow-lg transition duration-300" onclick="return confirm('Are you sure?');">Delete</a>
+                                        <button class="deleteBtn hover:bg-red-500 text-red-500 font-bold px-6 py-2 rounded-lg bg-white hover:text-white hover:shadow-lg transition duration-300" 
+                                                data-id="<%= rs.getInt("driver_id")%>">
+                                            Delete
+                                        </button>
+
+
                                     </td>
                                 </tr>
                                 <% }
-                                    conn.close();
-                                } catch (Exception e) {
-                                    e.printStackTrace();
-                                }%>
+                                        conn.close();
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }%>
                             </tbody>
                         </table>
                     </div>
@@ -166,29 +174,67 @@
 
         <!-- JavaScript -->
         <script>
+            // Edit button functionality
             document.querySelectorAll(".editBtn").forEach(button => {
                 button.addEventListener("click", function () {
+                    // Populate the modal fields with driver data from the button attributes
                     document.getElementById("editDriverId").value = this.getAttribute("data-id");
                     document.getElementById("editDriverName").value = this.getAttribute("data-name");
                     document.getElementById("editLicenseNumber").value = this.getAttribute("data-license");
                     document.getElementById("editCabAssigned").value = this.getAttribute("data-cab");
                     document.getElementById("editStatus").value = this.getAttribute("data-status");
 
+                    // Show the edit modal
                     document.getElementById("editModal").classList.remove("hidden");
                 });
             });
 
+            // Close the edit modal when the close button is clicked
             document.getElementById("closeEditModalBtn").addEventListener("click", function () {
                 document.getElementById("editModal").classList.add("hidden");
             });
 
+            // Open the general modal
             document.getElementById("openModalBtn").addEventListener("click", function () {
                 document.getElementById("modal").classList.remove("hidden");
             });
 
+            // Close the general modal
             document.getElementById("closeModalBtn").addEventListener("click", function () {
                 document.getElementById("modal").classList.add("hidden");
             });
+
+            // Delete button functionality
+            document.querySelectorAll(".deleteBtn").forEach(button => {
+                button.addEventListener("click", function () {
+                    const driverId = this.getAttribute("data-id");
+                    // Confirm if the user wants to delete the driver
+                    if (confirm('Are you sure you want to delete this driver?')) {
+                        const form = document.createElement('form');
+                        form.method = 'POST';
+                        form.action = '/MegaCityCab/DriverManagementServlet'; // Your servlet URL
+
+                        // Hidden input to specify the action as delete
+                        const actionInput = document.createElement('input');
+                        actionInput.type = 'hidden';
+                        actionInput.name = 'action';
+                        actionInput.value = 'delete';  // Specify delete action
+                        form.appendChild(actionInput);
+
+                        // Hidden input for the driver ID
+                        const idInput = document.createElement('input');
+                        idInput.type = 'hidden';
+                        idInput.name = 'driverId';
+                        idInput.value = driverId;  // Pass the driver ID
+                        form.appendChild(idInput);
+
+                        // Append the form to the document and submit it
+                        document.body.appendChild(form);
+                        form.submit();
+                    }
+                });
+            });
         </script>
+
     </body>
 </html>
