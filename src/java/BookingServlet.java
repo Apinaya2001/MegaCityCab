@@ -16,41 +16,43 @@ public class BookingServlet extends HttpServlet {
     private static final String JDBC_PASSWORD = "";
 
     // Handle GET request - Fetch all bookings
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        List<Booking> bookings = new ArrayList<>();
+ @Override
+protected void doGet(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+    List<Booking> bookings = new ArrayList<>();
 
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            try (Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
-                 PreparedStatement stmt = conn.prepareStatement("SELECT * FROM bookings");
-                 ResultSet rs = stmt.executeQuery()) {
+    try {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        try (Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+             PreparedStatement stmt = conn.prepareStatement("SELECT id, full_name, phone, pickup_loc, dropoff_loc, cab FROM bookings");
+             ResultSet rs = stmt.executeQuery()) {
 
-                while (rs.next()) {
-                    Booking booking = new Booking(
-                            rs.getInt("id"),
-                            rs.getString("full_name"),
-                            rs.getString("phone"),
-                            rs.getString("pickup_loc"),
-                            rs.getString("dropoff_loc"),
-                            rs.getString("cab")
-                    );
-                    bookings.add(booking);
-                }
+            while (rs.next()) {
+                Booking booking = new Booking(
+                        rs.getInt("id"),
+                        rs.getString("full_name"),
+                        rs.getString("phone"),  // Ensure this column exists
+                        rs.getString("pickup_loc"),  // Match with actual column name
+                        rs.getString("dropoff_loc"),
+                        rs.getString("cab")
+                );
+                bookings.add(booking);
             }
-
-            request.setAttribute("bookings", bookings);
-            request.getRequestDispatcher("dashboard/booking.jsp").forward(request, response);
-
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-            response.sendRedirect("error.jsp?error=driver_not_found");
-        } catch (SQLException e) {
-            e.printStackTrace();
-            response.sendRedirect("error.jsp?error=db_error");
         }
+
+        request.setAttribute("bookings", bookings);
+        request.getRequestDispatcher("dashboard/booking.jsp").forward(request, response);
+
+    } catch (ClassNotFoundException e) {
+        e.printStackTrace();
+        response.sendRedirect("error.jsp?error=driver_not_found");
+    } catch (SQLException e) {
+        e.printStackTrace();
+        response.sendRedirect("error.jsp?error=db_error");
     }
+}
+
+
 
     // Handle POST request - Insert a new booking
     @Override

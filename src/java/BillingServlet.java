@@ -1,3 +1,4 @@
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.RequestDispatcher;
@@ -31,9 +32,8 @@ public class BillingServlet extends HttpServlet {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            try (Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
-                 PreparedStatement stmt = conn.prepareStatement("SELECT full_name, phone, pickup_loc, dropoff_loc, cab FROM bookings WHERE id = ?")) {
-                
+            try (Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD); PreparedStatement stmt = conn.prepareStatement("SELECT full_name, phone, pickup_loc, dropoff_loc, cab FROM bookings WHERE id = ?")) {
+
                 stmt.setString(1, bookingId);
                 try (ResultSet rs = stmt.executeQuery()) {
                     if (rs.next()) {
@@ -44,15 +44,14 @@ public class BillingServlet extends HttpServlet {
                         String cab = rs.getString("cab");
 
                         double fare = calculateFare(cab);
-                        saveBillToDatabase(bookingId, fullName , phone, startLoc, endLoc, cab, fare);
+                        saveBillToDatabase(bookingId, fullName, phone, startLoc, endLoc, cab, fare);
 
                         request.setAttribute("fullName", fullName);
-request.setAttribute("phone", phone);
-request.setAttribute("startLoc", startLoc);
-request.setAttribute("endLoc", endLoc);
-request.setAttribute("cab", cab);
-request.setAttribute("fare", fare);
-
+                        request.setAttribute("phone", phone);
+                        request.setAttribute("startLoc", startLoc);
+                        request.setAttribute("endLoc", endLoc);
+                        request.setAttribute("cab", cab);
+                        request.setAttribute("fare", fare);
 
                         RequestDispatcher dispatcher = request.getRequestDispatcher("billing.jsp");
                         dispatcher.forward(request, response);
@@ -69,8 +68,7 @@ request.setAttribute("fare", fare);
     }
 
     private void saveBillToDatabase(String bookingId, String fullName, String phone, String pickup, String dropoff, String cabType, double fare) {
-        try (Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
-             PreparedStatement stmt = conn.prepareStatement("INSERT INTO billing (booking_id, full_name, phone, pickup_location, dropoff_location, cab_type, fare) VALUES (?, ?, ?, ?, ?, ?, ?)");) {
+        try (Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD); PreparedStatement stmt = conn.prepareStatement("INSERT INTO billing (booking_id, full_name, phone, pickup_location, dropoff_location, cab_type, fare) VALUES (?, ?, ?, ?, ?, ?, ?)");) {
 
             stmt.setString(1, bookingId);
             stmt.setString(2, fullName);
@@ -88,9 +86,12 @@ request.setAttribute("fare", fare);
 
     private double calculateFare(String cabType) {
         switch (cabType.toLowerCase()) {
-            case "car": return 800;
-            case "van": return 1000;
-            default: return 1200;
+            case "car":
+                return 800;
+            case "van":
+                return 1000;
+            default:
+                return 1200;
         }
     }
 }

@@ -41,7 +41,7 @@
 
         <main class="p-10">
             <div class="bg-white p-6 shadow-md rounded-lg mb-6">
-                <h2 class="text-2xl font-bold text-emerald-600 mb-6">User Details</h2>
+                <h2 class="text-2xl font-bold text-emerald-600 mb-6">Booking Details</h2>
                 <div class="overflow-x-auto bg-white shadow-lg rounded-lg">
                     <table class="min-w-full table-auto">
                         <thead class="bg-emerald-600 text-white">
@@ -55,24 +55,22 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <%
-                            try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3308/city_cab", "root", "");
-                                 Statement stmt = conn.createStatement();
-                                 ResultSet rs = stmt.executeQuery("SELECT users.id, users.full_name, users.phone_number, bookings.start_location, bookings.end_location, GROUP_CONCAT(cabs.model) AS cabs " +
-                                                                "FROM users " +
-                                                                "LEFT JOIN bookings ON users.id = bookings.user_id " +
-                                                                "LEFT JOIN cabs ON bookings.cab_id = cabs.cab_id " +
-                                                                "GROUP BY users.id")) {
+                        <%
+                        try {
+                            Class.forName("com.mysql.cj.jdbc.Driver"); // Ensure you have this driver
+                            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3308/city_cab", "root", "");
+                            Statement stmt = conn.createStatement();
+                            ResultSet rs = stmt.executeQuery("SELECT * FROM bookings");
 
-                                while (rs.next()) {
-                            %>
+                            while (rs.next()) {
+                    %>
                             <tr>
                                 <td class="py-3 px-6"><%= rs.getInt("id") %></td>
                                 <td class="py-3 px-6"><%= rs.getString("full_name") %></td>
-                                <td class="py-3 px-6"><%= rs.getString("phone_number") %></td>
-                                <td class="py-3 px-6"><%= rs.getString("start_location") %></td>
-                                <td class="py-3 px-6"><%= rs.getString("end_location") %></td>
-                                <td class="py-3 px-6"><%= rs.getString("cabs") != null ? rs.getString("cabs") : "No cabs assigned" %></td>
+                                <td class="py-3 px-6"><%= rs.getString("phone") %></td>
+                                <td class="py-3 px-6"><%= rs.getString("pickup_loc") %></td>
+                                <td class="py-3 px-6"><%= rs.getString("dropoff_loc") %></td>
+                                <td class="py-3 px-6"><%= rs.getString("cab") != null ? rs.getString("cab") : "No cab assigned" %></td>
                             </tr>
                             <%
                                 }
