@@ -4,13 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Piri/Documents/WebApplication1/MegaCityCab/web/dashboard/driverManagement.jsp</file>
-            <file>file:/C:/Users/Piri/Documents/WebApplication1/MegaCityCab/web/dashboard/dashboard.jsp</file>
+            <file>file:/C:/Users/Piri/Documents/WebApplication1/MegaCityCab/src/java/DriverManagementServlet.java</file>
             <file>file:/C:/Users/Piri/Documents/WebApplication1/MegaCityCab/web/dashboard/cabManagement.jsp</file>
-            <file>file:/C:/Users/Piri/Documents/WebApplication1/MegaCityCab/web/dashboard/userDetails.jsp</file>
-            <file>file:/C:/Users/Piri/Documents/WebApplication1/MegaCityCab/web/dashboard/bookingDetails.jsp</file>
             <file>file:/C:/Users/Piri/Documents/WebApplication1/MegaCityCab/src/java/CabManagementServlet.java</file>
-            <file>file:/C:/Users/Piri/Documents/WebApplication1/MegaCityCab/web/index.jsp</file>
-            <file>file:/C:/Users/Piri/Documents/WebApplication1/MegaCityCab/web/image/herosectioncar.png</file>
         </group>
     </open-files>
 </project-private>
