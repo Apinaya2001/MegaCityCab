@@ -301,37 +301,37 @@
                     </div>
 
                     <form action="BookingServlet" method="POST" class="bg-white p-6 rounded-xl shadow-2xl max-w-lg mx-auto text-gray-800 border border-gray-200">
-    <div class="flex flex-row space-x-4">
-        <div class="w-1/2">
-            <label for="fullName" class="block text-lg font-semibold text-gray-700 mb-1">Full Name</label>
-            <input type="text" id="fullName" name="fullName" required class="w-full px-2 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500">
-        </div>
+                        <div class="flex flex-row space-x-4">
+                            <div class="w-1/2">
+                                <label for="fullName" class="block text-lg font-semibold text-gray-700 mb-1">Full Name</label>
+                                <input type="text" id="fullName" name="fullName" required class="w-full px-2 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500">
+                            </div>
 
-        <div class="w-1/2">
-            <label for="phone" class="block text-lg font-semibold text-gray-700 mb-1">Phone Number</label>
-            <input type="text" id="phone" name="phone" required class="w-full px-2 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500">
-        </div>
-    </div>
+                            <div class="w-1/2">
+                                <label for="phone" class="block text-lg font-semibold text-gray-700 mb-1">Phone Number</label>
+                                <input type="text" id="phone" name="phone" required class="w-full px-2 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500">
+                            </div>
+                        </div>
 
-    <div class="mt-4">
-        <label for="start-location" class="block text-lg font-semibold text-gray-700 mb-1">Start Location</label>
-        <input type="text" id="start-location" name="startLoc" required class="w-full px-2 py-2 border border-gray-300 rounded-lg">
-    </div>
+                        <div class="mt-4">
+                            <label for="start-location" class="block text-lg font-semibold text-gray-700 mb-1">Start Location</label>
+                            <input type="text" id="start-location" name="startLoc" required class="w-full px-2 py-2 border border-gray-300 rounded-lg">
+                        </div>
 
-    <div class="mt-4">
-        <label for="end-location" class="block text-lg font-semibold text-gray-700 mb-1">End Location</label>
-        <input type="text" id="end-location" name="endLoc" required class="w-full px-2 py-2 border border-gray-300 rounded-lg">
-    </div>
+                        <div class="mt-4">
+                            <label for="end-location" class="block text-lg font-semibold text-gray-700 mb-1">End Location</label>
+                            <input type="text" id="end-location" name="endLoc" required class="w-full px-2 py-2 border border-gray-300 rounded-lg">
+                        </div>
 
-    <div class="mt-4">
-        <label for="Cabs" class="block text-lg font-semibold text-gray-700 mb-1">Cabs</label>
-        <input type="text" id="Cabs" name="cab" required class="w-full px-2 py-2 border border-gray-300 rounded-lg">
-    </div>
+                        <div class="mt-4">
+                            <label for="Cabs" class="block text-lg font-semibold text-gray-700 mb-1">Cabs</label>
+                            <input type="text" id="Cabs" name="cab" required class="w-full px-2 py-2 border border-gray-300 rounded-lg">
+                        </div>
 
-    <button type="submit" class="w-full mt-6 px-6 py-3 text-lg text-white bg-gradient-to-r from-yellow-500 to-yellow-600 hover:scale-105">
-        🚖 Book Now
-    </button>
-</form>
+                        <button type="submit" class="w-full mt-6 px-6 py-3 text-lg text-white bg-gradient-to-r from-yellow-500 to-yellow-600 hover:scale-105">
+                            🚖 Book Now
+                        </button>
+                    </form>
 
 
                 </div>
