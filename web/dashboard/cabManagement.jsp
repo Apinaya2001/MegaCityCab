@@ -36,7 +36,7 @@
         <div class="flex-1 ml-56">
             <header class="bg-emerald-600 text-white p-4 flex items-center justify-between">
                 <h1 class="text-2xl font-bold"></h1>
-                <a href="logout.jsp" class="bg-emerald-600 text-white font-bold px-4 py-2 rounded-lg hover:bg-white hover:text-emerald-500 hover:shadow-lg transition duration-300">Logout</a>
+                <a href="../index.jsp" class="bg-emerald-600 text-white font-bold px-4 py-2 rounded-lg hover:bg-white hover:text-emerald-500 hover:shadow-lg transition duration-300">Logout</a>
             </header>
 
             <main class="p-10">
