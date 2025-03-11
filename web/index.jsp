@@ -1,8 +1,3 @@
-<%-- 
-    Document   : index
-    Created on : Feb 8, 2025, 11:59:03 PM
-    Author     : Piri
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -125,13 +120,15 @@
 
         <!-- About Us Section -->
         <section id="about" class="relative bg-gradient-to-b from-white to-emerald-50 text-black py-20 px-6">
-            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center space-y-12 md:space-y-0 md:space-x-12">
+            <div class=" mx-auto flex flex-col md:flex-row items-center space-y-12 md:space-y-0 md:space-x-12">
 
                 <!-- Image Section -->
-                <div class="w-full md:w-1/2 relative group">
-                    <img src="image/cabservice.jpg" alt="Mega City Cab" class="rounded-xl shadow-2xl transform group-hover:scale-105 transition-all duration-500">
-                    <div class="absolute inset-0 bg-black opacity-20 rounded-xl group-hover:opacity-10 transition-opacity duration-500"></div>
+                <div class="w-full md:w-1/2 group flex justify-center">
+                    <img src="image/aboutimage.jpg" alt="Mega City Cab" 
+                         class="rounded-xl shadow-2xl transform group-hover:scale-105 transition-all duration-500"
+                         style="width: 600px; height: 400px; object-fit: cover;">
                 </div>
+
 
                 <!-- Content Section -->
                 <div class="w-full md:w-1/2 text-center md:text-left">
@@ -173,7 +170,7 @@
         </section>
 
 
-        <!-- Features Section -->
+        <!-- why choose -->
         <section class="py-20 px-6 bg-emerald-50 text-center">
             <h2 class="text-4xl font-bold text-emerald-600 mb-12">Why Choose Mega City Cab?</h2>
 
@@ -250,33 +247,42 @@
                     </div>
                 </div>
 
-                <!-- FAQ Section -->
-                <div class="mt-16 text-left max-w-4xl mx-auto">
-                    <h3 class="text-4xl font-bold text-emerald-600 mb-8">❓ Frequently Asked Questions</h3>
-                    <div class="space-y-6">
-                        <details class="bg-gray-100 p-5 rounded-md shadow-md cursor-pointer transition-all duration-300 hover:bg-gray-200">
-                            <summary class="text-lg font-semibold text-emerald-700 flex items-center">
-                                🚖 How can I book a ride? 
-                                <span class="ml-auto">▼</span>
-                            </summary>
-                            <p class="text-gray-700 mt-3">You can book a ride using our website or by calling us directly.</p>
-                        </details>
-                        <details class="bg-gray-100 p-5 rounded-md shadow-md cursor-pointer transition-all duration-300 hover:bg-gray-200">
-                            <summary class="text-lg font-semibold text-emerald-700 flex items-center">
-                                💳 What payment methods do you accept? 
-                                <span class="ml-auto">▼</span>
-                            </summary>
-                            <p class="text-gray-700 mt-3">We accept cash, credit/debit cards, and online payments.</p>
-                        </details>
-                        <details class="bg-gray-100 p-5 rounded-md shadow-md cursor-pointer transition-all duration-300 hover:bg-gray-200">
-                            <summary class="text-lg font-semibold text-emerald-700 flex items-center">
-                                ⏳ How long does it take to get a cab? 
-                                <span class="ml-auto">▼</span>
-                            </summary>
-                            <p class="text-gray-700 mt-3">Our drivers usually arrive within 5-10 minutes of booking.</p>
-                        </details>
+                <div class="mt-16 text-left w-full mx-auto flex flex-row items-center space-x-8">
+                    <!-- Image next to FAQ Title -->
+                    <div class="flex-shrink-0 w-1/2">
+                        <img src="image/dashboardimage.jpg" alt="FAQ Image" class="w-[700px] h-[400px] object-cover rounded-lg shadow-lg">
+                    </div>
+
+                    <!-- FAQ Section -->
+                    <div class="flex-1 w-1/2">
+                        <h3 class="text-4xl font-bold text-emerald-600 mb-8">❓ Frequently Asked Questions</h3>
+                        <div class="space-y-6">
+                            <details class="bg-gray-100 p-5 rounded-md shadow-md cursor-pointer transition-all duration-300 hover:bg-gray-200">
+                                <summary class="text-lg font-semibold text-emerald-700 flex items-center">
+                                    🚖 How can I book a ride? 
+                                    <span class="ml-auto">▼</span>
+                                </summary>
+                                <p class="text-gray-700 mt-3">You can book a ride using our website or by calling us directly.</p>
+                            </details>
+                            <details class="bg-gray-100 p-5 rounded-md shadow-md cursor-pointer transition-all duration-300 hover:bg-gray-200">
+                                <summary class="text-lg font-semibold text-emerald-700 flex items-center">
+                                    💳 What payment methods do you accept? 
+                                    <span class="ml-auto">▼</span>
+                                </summary>
+                                <p class="text-gray-700 mt-3">We accept cash, credit/debit cards, and online payments.</p>
+                            </details>
+                            <details class="bg-gray-100 p-5 rounded-md shadow-md cursor-pointer transition-all duration-300 hover:bg-gray-200">
+                                <summary class="text-lg font-semibold text-emerald-700 flex items-center">
+                                    ⏳ How long does it take to get a cab? 
+                                    <span class="ml-auto">▼</span>
+                                </summary>
+                                <p class="text-gray-700 mt-3">Our drivers usually arrive within 5-10 minutes of booking.</p>
+                            </details>
+                        </div>
                     </div>
                 </div>
+
+
 
             </div>
         </section>
