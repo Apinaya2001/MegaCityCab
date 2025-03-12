@@ -1,4 +1,3 @@
-
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -25,52 +24,45 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
+        HttpSession session = request.getSession();
+
         if (username.equals(ADMIN_USERNAME) && password.equals(ADMIN_PASSWORD)) {
-            // Admin login
-            HttpSession session = request.getSession();
             session.setAttribute("user", username);
             session.setAttribute("role", "admin");
+            session.setAttribute("success", "Login successful! Welcome, Admin.");
             response.sendRedirect("dashboard/dashboard.jsp");
-            return; // Exit to avoid further execution
+            return;
         }
 
-        // Normal user login (Database check)
         try {
-            // Load MySQL JDBC Driver
             Class.forName("com.mysql.cj.jdbc.Driver");
-
-            // Establish connection
             Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
 
-            // Prepare SQL query for checking the user in the database
             String query = "SELECT * FROM users WHERE email = ? AND password = ?";
-
             PreparedStatement stmt = conn.prepareStatement(query);
             stmt.setString(1, username);
             stmt.setString(2, password);
 
-            // Execute query
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                // Create a session for the user
-                HttpSession session = request.getSession();
                 session.setAttribute("email", username);
                 session.setAttribute("role", "user");
+                session.setAttribute("success", "Login successful! Welcome back.");
                 response.sendRedirect("index.jsp");
             } else {
-                // Redirect to login page with error
-                response.sendRedirect("login.jsp?error=1");
+                session.setAttribute("error", "Invalid username or password. Please try again.");
+                response.sendRedirect("login.jsp");
             }
 
-            // Close resources
             rs.close();
             stmt.close();
             conn.close();
 
         } catch (Exception e) {
             e.printStackTrace();
-            response.sendRedirect("login.jsp?error=db");
+            session.setAttribute("error", "Database connection error. Please try again later.");
+            response.sendRedirect("login.jsp");
         }
     }
 }

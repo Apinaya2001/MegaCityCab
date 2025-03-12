@@ -5,8 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Mega City Cab</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Auto-hide the alert after 3 seconds
+        setTimeout(function() {
+            var alert = document.getElementById("alert-box");
+            if (alert) {
+                alert.style.opacity = "0";
+                setTimeout(() => alert.remove(), 500); // Remove from DOM after fade-out
+            }
+        }, 3000);
+    </script>
 </head>
 <body class="bg-gray-100 flex items-center justify-center h-screen">
+
+    <!-- Alert Messages (Top-Right Corner) -->
+    <div class="absolute top-4 right-4 z-50">
+        <% 
+            String error = (String) session.getAttribute("error");
+            String success = (String) session.getAttribute("success");
+        %>
+
+        <% if (error != null) { %>
+            <div id="alert-box" class="bg-red-500 text-white px-4 py-3 rounded-lg shadow-lg fade-in transition-opacity duration-300">
+                <%= error %>
+            </div>
+            <% session.removeAttribute("error"); %>
+        <% } %>
+
+        <% if (success != null) { %>
+            <div id="alert-box" class="bg-green-500 text-white px-4 py-3 rounded-lg shadow-lg fade-out transition-opacity duration-100">
+                <%= success %>
+            </div>
+            <% session.removeAttribute("success"); %>
+        <% } %>
+    </div>
 
     <!-- Login Form Container -->
     <div class="bg-white p-8 rounded-lg shadow-lg w-96">

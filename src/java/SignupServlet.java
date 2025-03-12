@@ -1,4 +1,3 @@
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -25,6 +24,15 @@ public class SignupServlet extends HttpServlet {
         String fullName = request.getParameter("fullName");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
+        String confirmPassword = request.getParameter("confirmPassword");
+        String nic = request.getParameter("nic");
+        String address = request.getParameter("address");
+
+        // Check if passwords match
+        if (!password.equals(confirmPassword)) {
+            response.sendRedirect("signup.jsp?error=password_mismatch");
+            return;
+        }
 
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -38,49 +46,41 @@ public class SignupServlet extends HttpServlet {
             conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
 
             // Insert user data with a default role
-            String query = "INSERT INTO users (full_name, email, password, role) VALUES (?, ?, ?, ?)";
+            String query = "INSERT INTO users (full_name, email, password, nic, address, role) VALUES (?, ?, ?, ?, ?, ?)";
             stmt = conn.prepareStatement(query, PreparedStatement.RETURN_GENERATED_KEYS);
             stmt.setString(1, fullName);
             stmt.setString(2, email);
             stmt.setString(3, password);
-            stmt.setString(4, "user"); // Default role
+            stmt.setString(4, nic);
+            stmt.setString(5, address);
+            stmt.setString(6, "user"); // Default role
 
             int rowsAffected = stmt.executeUpdate();
             if (rowsAffected > 0) {
-                // Retrieve the generated user ID
                 rs = stmt.getGeneratedKeys();
                 if (rs.next()) {
                     int userId = rs.getInt(1);
 
-                    // Store user ID and other details in session
                     HttpSession session = request.getSession();
                     session.setAttribute("userId", userId);
                     session.setAttribute("userFullName", fullName);
                     session.setAttribute("userEmail", email);
+                    session.setAttribute("userNIC", nic);
+                    session.setAttribute("userAddress", address);
 
-                    // Redirect to login page with a success message
                     response.sendRedirect("login.jsp?register=success");
                 }
             } else {
-                // Redirect to signup page with an error message
-                response.sendRedirect("register.jsp?error=db_error");
+                response.sendRedirect("signup.jsp?error=db_error");
             }
         } catch (Exception e) {
             e.printStackTrace();
-            // Redirect to signup page with an error message
-            response.sendRedirect("register.jsp?error=db_error");
+            response.sendRedirect("signup.jsp?error=db_error");
         } finally {
-            // Close resources
             try {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (stmt != null) {
-                    stmt.close();
-                }
-                if (conn != null) {
-                    conn.close();
-                }
+                if (rs != null) rs.close();
+                if (stmt != null) stmt.close();
+                if (conn != null) conn.close();
             } catch (Exception e) {
                 e.printStackTrace();
             }

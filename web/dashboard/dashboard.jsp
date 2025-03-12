@@ -16,11 +16,11 @@
                 <a href="dashboard.jsp" class="flex items-center text-lg p-2 rounded-lg hover:bg-white hover:text-emerald-500 transition">
                     <i class="fa-solid fa-tachometer-alt mr-3"></i> Dashboard
                 </a>
-                <a href="userDetails.jsp" class="flex items-center text-lg p-2 rounded-lg hover:bg-white hover:text-emerald-500 transition">
-                    <i class="fa-solid fa-users mr-3"></i> Users
-                </a>
                 <a href="driverManagement.jsp" class="flex items-center text-lg p-2 rounded-lg hover:bg-white hover:text-emerald-500 transition">
                     <i class="fa-solid fa-user-tie mr-3"></i> Drivers
+                </a>
+                <a href="userDetails.jsp" class="flex items-center text-lg p-2 rounded-lg hover:bg-white hover:text-emerald-500 transition">
+                    <i class="fa-solid fa-users mr-3"></i> Users
                 </a>
                 <a href="cabManagement.jsp" class="flex items-center text-lg p-2 rounded-lg hover:bg-white hover:text-emerald-500 transition">
                     <i class="fa-solid fa-car-side mr-3"></i> Cabs

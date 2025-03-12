@@ -7,9 +7,9 @@
     <title>Billing Details</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100">
-    <div class="max-w-2xl mx-auto mt-10 bg-white p-6 rounded-lg shadow-md">
-        <h2 class="text-2xl font-bold text-center text-gray-700 mb-4">Billing Details</h2>
+<body class="bg-gray-100 p-24">
+    <div class="max-w-2xl mx-auto mt-10 p-12 bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold text-center text-green-700 mb-4">Billing Details</h2>
         
         <table class="w-full border-collapse border border-gray-300">
        
@@ -39,7 +39,7 @@
         </table>
 
         <div class="text-center mt-6">
-            <a href="index.jsp" class="px-4 py-2 bg-blue-500 text-white rounded-lg">Go to Home</a>
+            <a href="index.jsp" class="px-4 py-2 bg-green-500 text-white rounded-lg">Go to Home</a>
         </div>
     </div>
 </body>
