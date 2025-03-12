@@ -28,7 +28,10 @@ public class UserServlet extends HttpServlet {
                         rs.getInt("id"),
                         rs.getString("full_name"),
                         rs.getString("email"),
-                        rs.getString("role") // Removed trailing comma
+                        rs.getString("nic"),
+                        rs.getString("address"),
+                        rs.getString("role"),
+                        rs.getTimestamp("created_at")
                 );
                 users.add(user);
             }
@@ -45,18 +48,27 @@ public class UserServlet extends HttpServlet {
         private int id;
         private String fullName;
         private String email;
+        private String nic;
+        private String address;
         private String role;
+        private Timestamp createdAt;
 
-        public User(int id, String fullName, String email, String role) {
+        public User(int id, String fullName, String email, String nic, String address, String role, Timestamp createdAt) {
             this.id = id;
             this.fullName = fullName;
             this.email = email;
+            this.nic = nic;
+            this.address = address;
             this.role = role;
+            this.createdAt = createdAt;
         }
 
         public int getId() { return id; }
         public String getFullName() { return fullName; }
         public String getEmail() { return email; }
+        public String getNic() { return nic; }
+        public String getAddress() { return address; }
         public String getRole() { return role; }
+        public Timestamp getCreatedAt() { return createdAt; }
     }
 }

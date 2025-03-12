@@ -6,24 +6,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
 </head>
 <body class="bg-gray-100 flex">
 
     <!-- Sidebar -->
-     <aside class="bg-emerald-600 text-white w-[222px] min-h-screen p-6 fixed shadow-lg">
+    <aside class="bg-emerald-600 text-white w-[222px] min-h-screen p-6 fixed shadow-lg">
         <h1 class="text-3xl font-extrabold mb-8 text-center tracking-wide">Mega City Cab</h1>
         <nav class="space-y-4">
             <a href="dashboard.jsp" class="flex items-center text-lg p-2 rounded-lg hover:bg-white hover:text-emerald-500 transition">
                 <i class="fa-solid fa-tachometer-alt mr-3"></i> Dashboard
             </a>
-            <a href="userDetails.jsp" class="flex items-center text-lg p-2 rounded-lg hover:bg-white hover:text-emerald-500 transition">
-                <i class="fa-solid fa-users mr-3"></i> Users
-            </a>
             <a href="driverManagement.jsp" class="flex items-center text-lg p-2 rounded-lg hover:bg-white hover:text-emerald-500 transition">
                 <i class="fa-solid fa-user-tie mr-3"></i> Drivers
             </a>
+            <a href="userDetails.jsp" class="flex items-center text-lg p-2 rounded-lg hover:bg-white hover:text-emerald-500 transition">
+                    <i class="fa-solid fa-users mr-3"></i> Users
+                </a>
             <a href="cabManagement.jsp" class="flex items-center text-lg p-2 rounded-lg hover:bg-white hover:text-emerald-500 transition">
                 <i class="fa-solid fa-car-side mr-3"></i> Cabs
             </a>
@@ -50,7 +49,10 @@
                                 <th class="py-3 px-6 text-left text-sm">ID</th>
                                 <th class="py-3 px-6 text-left text-sm">Full Name</th>
                                 <th class="py-3 px-6 text-left text-sm">Email</th>
+                                <th class="py-3 px-6 text-left text-sm">NIC</th>
+                                <th class="py-3 px-6 text-left text-sm">Address</th>
                                 <th class="py-3 px-6 text-left text-sm">Role</th>
+                                <th class="py-3 px-6 text-left text-sm">Created At</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -65,12 +67,15 @@
                                 <td class="py-3 px-6"><%= rs.getInt("id")%></td>
                                 <td class="py-3 px-6"><%= rs.getString("full_name")%></td>
                                 <td class="py-3 px-6"><%= rs.getString("email")%></td>
+                                <td class="py-3 px-6"><%= rs.getString("nic")%></td>
+                                <td class="py-3 px-6"><%= rs.getString("address")%></td>
                                 <td class="py-3 px-6"><%= rs.getString("role")%></td>
+                                <td class="py-3 px-6"><%= rs.getTimestamp("created_at")%></td>
                             </tr>
                             <%
                                 }
                             } catch (Exception e) {
-                                out.println("<tr><td colspan='4' class='text-danger text-center py-3'>Error: " + e.getMessage() + "</td></tr>");
+                                out.println("<tr><td colspan='7' class='text-danger text-center py-3'>Error: " + e.getMessage() + "</td></tr>");
                             }
                             %>
                         </tbody>

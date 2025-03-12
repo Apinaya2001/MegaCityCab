@@ -17,12 +17,12 @@
             <a href="dashboard.jsp" class="flex items-center text-lg p-2 rounded-lg hover:bg-white hover:text-emerald-500 transition">
                 <i class="fa-solid fa-tachometer-alt mr-3"></i> Dashboard
             </a>
-            <a href="userDetails.jsp" class="flex items-center text-lg p-2 rounded-lg hover:bg-white hover:text-emerald-500 transition">
-                <i class="fa-solid fa-users mr-3"></i> Users
-            </a>
             <a href="driverManagement.jsp" class="flex items-center text-lg p-2 rounded-lg hover:bg-white hover:text-emerald-500 transition">
                 <i class="fa-solid fa-user-tie mr-3"></i> Drivers
             </a>
+            <a href="userDetails.jsp" class="flex items-center text-lg p-2 rounded-lg hover:bg-white hover:text-emerald-500 transition">
+                    <i class="fa-solid fa-users mr-3"></i> Users
+                </a>
             <a href="cabManagement.jsp" class="flex items-center text-lg p-2 rounded-lg hover:bg-white hover:text-emerald-500 transition">
                 <i class="fa-solid fa-car-side mr-3"></i> Cabs
             </a>
@@ -52,33 +52,38 @@
                                 <th class="py-3 px-6 text-left text-sm">Start Location</th>
                                 <th class="py-3 px-6 text-left text-sm">End Location</th>
                                 <th class="py-3 px-6 text-left text-sm">Cabs</th>
+                                <th class="py-3 px-6 text-left text-sm">Create_At</th>
+
+                                
                             </tr>
                         </thead>
                         <tbody>
-                        <%
-                        try {
-                            Class.forName("com.mysql.cj.jdbc.Driver"); // Ensure you have this driver
-                            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3308/city_cab", "root", "");
-                            Statement stmt = conn.createStatement();
-                            ResultSet rs = stmt.executeQuery("SELECT * FROM bookings");
+<%
+    try {
+        Class.forName("com.mysql.cj.jdbc.Driver"); 
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3308/city_cab", "root", "");
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT * FROM bookings");
 
-                            while (rs.next()) {
-                    %>
-                            <tr>
-                                <td class="py-3 px-6"><%= rs.getInt("id") %></td>
-                                <td class="py-3 px-6"><%= rs.getString("full_name") %></td>
-                                <td class="py-3 px-6"><%= rs.getString("phone") %></td>
-                                <td class="py-3 px-6"><%= rs.getString("pickup_loc") %></td>
-                                <td class="py-3 px-6"><%= rs.getString("dropoff_loc") %></td>
-                                <td class="py-3 px-6"><%= rs.getString("cab") != null ? rs.getString("cab") : "No cab assigned" %></td>
-                            </tr>
-                            <%
-                                }
-                            } catch (Exception e) {
-                                out.println("<tr><td colspan='6' class='text-danger text-center py-3'>Error: " + e.getMessage() + "</td></tr>");
-                            }
-                            %>
-                        </tbody>
+        while (rs.next()) {
+%>
+    <tr>
+        <td class="py-3 px-6"><%= rs.getInt("id") %></td>
+        <td class="py-3 px-6"><%= rs.getString("full_name") %></td>
+        <td class="py-3 px-6"><%= rs.getString("phone") %></td>
+        <td class="py-3 px-6"><%= rs.getString("pickup_loc") %></td>
+        <td class="py-3 px-6"><%= rs.getString("dropoff_loc") %></td>
+        <td class="py-3 px-6"><%= rs.getString("cab") != null ? rs.getString("cab") : "No cab assigned" %></td>
+        <td class="py-3 px-6"><%= rs.getTimestamp("created_at") != null ? rs.getTimestamp("created_at").toString() : "N/A" %></td> <!-- Display created_at -->
+    </tr>
+<%
+        }
+    } catch (Exception e) {
+        out.println("<tr><td colspan='7' class='text-danger text-center py-3'>Error: " + e.getMessage() + "</td></tr>");
+    }
+%>
+</tbody>
+
                     </table>
                 </div>
             </div>
