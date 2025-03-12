@@ -33,7 +33,7 @@
         <% } %>
 
         <% if (success != null) { %>
-            <div id="alert-box" class="bg-green-500 text-white px-4 py-3 rounded-lg shadow-lg fade-out transition-opacity duration-100">
+            <div id="alert-box" class="bg-green-500 text-white px-4 py-3 rounded-lg shadow-lg fade-out transition-opacity duration-900">
                 <%= success %>
             </div>
             <% session.removeAttribute("success"); %>

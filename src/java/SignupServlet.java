@@ -4,7 +4,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -27,8 +26,6 @@ public class SignupServlet extends HttpServlet {
         String confirmPassword = request.getParameter("confirmPassword");
         String nic = request.getParameter("nic");
         String address = request.getParameter("address");
-
-        // Check if passwords match
         if (!password.equals(confirmPassword)) {
             response.sendRedirect("signup.jsp?error=password_mismatch");
             return;
@@ -39,10 +36,8 @@ public class SignupServlet extends HttpServlet {
         ResultSet rs = null;
 
         try {
-            // Load MySQL JDBC Driver
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            // Establish connection
             conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
 
             // Insert user data with a default role
@@ -53,7 +48,7 @@ public class SignupServlet extends HttpServlet {
             stmt.setString(3, password);
             stmt.setString(4, nic);
             stmt.setString(5, address);
-            stmt.setString(6, "user"); // Default role
+            stmt.setString(6, "user");
 
             int rowsAffected = stmt.executeUpdate();
             if (rowsAffected > 0) {

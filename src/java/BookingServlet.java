@@ -1,4 +1,5 @@
-import jakarta.servlet.ServletException; 
+
+import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -23,9 +24,7 @@ public class BookingServlet extends HttpServlet {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            try (Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
-                 PreparedStatement stmt = conn.prepareStatement("SELECT id, full_name, phone, pickup_loc, dropoff_loc, cab, created_at FROM bookings");
-                 ResultSet rs = stmt.executeQuery()) {
+            try (Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD); PreparedStatement stmt = conn.prepareStatement("SELECT id, full_name, phone, pickup_loc, dropoff_loc, cab, created_at FROM bookings"); ResultSet rs = stmt.executeQuery()) {
 
                 while (rs.next()) {
                     Booking booking = new Booking(
@@ -65,10 +64,9 @@ public class BookingServlet extends HttpServlet {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            try (Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
-                 PreparedStatement stmt = conn.prepareStatement(
-                         "INSERT INTO bookings (full_name, phone, pickup_loc, dropoff_loc, cab) VALUES (?, ?, ?, ?, ?)",
-                         Statement.RETURN_GENERATED_KEYS)) {
+            try (Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD); PreparedStatement stmt = conn.prepareStatement(
+                    "INSERT INTO bookings (full_name, phone, pickup_loc, dropoff_loc, cab) VALUES (?, ?, ?, ?, ?)",
+                    Statement.RETURN_GENERATED_KEYS)) {
 
                 stmt.setString(1, fullName);
                 stmt.setString(2, phone);
@@ -99,6 +97,7 @@ public class BookingServlet extends HttpServlet {
 
     // Booking model class
     public static class Booking {
+
         private int id;
         private String fullName;
         private String phone;

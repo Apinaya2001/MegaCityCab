@@ -8,12 +8,10 @@ public class MySQLConnection {
         
         try {
             // Load MySQL JDBC driver
-            Class.forName("com.mysql.cj.jdbc.Driver");  // This loads the driver
-            
-            // Establish connection to MySQL database
-            String url = "jdbc:mysql://localhost:3308/city_cab"; // Replace with your DB details
-            String username = "root"; // Your MySQL username
-            String password = ""; // Your MySQL password
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            String url = "jdbc:mysql://localhost:3308/city_cab";
+            String username = "root";
+            String password = ""; 
             
             connection = DriverManager.getConnection(url, username, password);
             System.out.println("Connected to the database!");

@@ -1,3 +1,4 @@
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -42,7 +43,7 @@ public class CabManagementServlet extends HttpServlet {
             stmt.setString(4, status);
             stmt.executeUpdate();
             conn.close();
-            response.sendRedirect("dashboard/cabManagement.jsp");  // Redirect after saving the new cab
+            response.sendRedirect("dashboard/cabManagement.jsp");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -63,47 +64,37 @@ public class CabManagementServlet extends HttpServlet {
             stmt.setString(2, driver);
             stmt.setString(3, licenseNumber);
             stmt.setString(4, status);
-            stmt.setInt(5, Integer.parseInt(cabId));  // Ensure cabId is correctly parsed
+            stmt.setInt(5, Integer.parseInt(cabId));
             stmt.executeUpdate();
             conn.close();
-            response.sendRedirect("dashboard/cabManagement.jsp");  // Redirect after updating the cab
+            response.sendRedirect("dashboard/cabManagement.jsp");
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     private void deleteCab(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    // Retrieve the cabId from the request parameter
-    String cabIdParam = request.getParameter("cabId");
-
-    if (cabIdParam == null || cabIdParam.isEmpty()) {
-        // Redirect with an error if the cab ID is missing
-        response.sendRedirect("dashboard/cabManagement.jsp?error=missing_cab_id");
-        return;
-    }
-
-    int cabId = Integer.parseInt(cabIdParam);
-
-    try (Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
-         PreparedStatement stmt = conn.prepareStatement("DELETE FROM cabs WHERE cab_id = ?")) {
-
-        stmt.setInt(1, cabId);  // Set the cab ID for deletion
-
-        int rowsAffected = stmt.executeUpdate();  // Execute the delete operation
-
-        // Redirect based on whether the deletion was successful
-        if (rowsAffected > 0) {
-            response.sendRedirect("dashboard/cabManagement.jsp?success=deleted");
-        } else {
-            response.sendRedirect("dashboard/cabManagement.jsp?error=db_error");
+        String cabIdParam = request.getParameter("cabId");
+        if (cabIdParam == null || cabIdParam.isEmpty()) {
+            response.sendRedirect("dashboard/cabManagement.jsp?error=missing_cab_id");
+            return;
         }
-    } catch (SQLException e) {
-        // Log the exception
-        e.printStackTrace();
-        response.sendRedirect("dashboard/cabManagement.jsp?error=db_exception");
+
+        int cabId = Integer.parseInt(cabIdParam);
+
+        try (Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD); PreparedStatement stmt = conn.prepareStatement("DELETE FROM cabs WHERE cab_id = ?")) {
+
+            stmt.setInt(1, cabId);
+            int rowsAffected = stmt.executeUpdate();
+            if (rowsAffected > 0) {
+                response.sendRedirect("dashboard/cabManagement.jsp?success=deleted");
+            } else {
+                response.sendRedirect("dashboard/cabManagement.jsp?error=db_error");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            response.sendRedirect("dashboard/cabManagement.jsp?error=db_exception");
+        }
     }
-}
 
-
-    
 }
